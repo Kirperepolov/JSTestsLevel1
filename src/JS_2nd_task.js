@@ -3,8 +3,13 @@
 // нужна, строчные и заглавные буквы - 1 символ.
 
 function extractCharacters(str){
-    var arr=Array.from(str.toLowerCase());
-    var arrCleaned=arr.filter( (item,index) => (arr.indexOf(item)===index) );
+    var arr = Array.from(str.toLowerCase());
+    var arrCleaned = [];
+    arr.forEach( (item) => {
+      if (!arrCleaned.includes(item)) {
+        arrCleaned.push(item);
+      }
+    } );
     return arrCleaned;
 }
 
